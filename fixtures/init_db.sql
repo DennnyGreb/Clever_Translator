@@ -52,9 +52,9 @@ ALTER TABLE `Word` ADD CONSTRAINT `fk-word-user` FOREIGN KEY (user_id) REFERENCE
 INSERT INTO Roles (name) VALUES ("User");
 INSERT INTO Roles (name) VALUES ("Admin");
 
-INSERT INTO Word (user_id, word_text) VALUES (1, "God");
-
 INSERT INTO User (name, surname, email, password, role_id) 
 VALUES ("Denis", "Grebenets", "dendendengrebenets@gmail.com", "qwerty", 1);
+
+INSERT INTO Word (user_id, word_text) VALUES (1, "God");
 
 SHOW TABLES;

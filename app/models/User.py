@@ -31,4 +31,4 @@ class User(db.Model):
     email = db.Column(db.String(255))
     password = db.Column(db.String(255))
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
-    words = db.relationship('Word', backref='user', lazy='dynamic')
+    word = db.relationship('Word', backref=db.backref('user', lazy='joined'), lazy='dynamic')

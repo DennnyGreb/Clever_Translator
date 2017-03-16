@@ -23,4 +23,4 @@ class Roles(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(255))
-    users = db.relationship('User', backref='roles', lazy='dynamic')
+    user = db.relationship('User', backref=db.backref('roles', lazy='joined'), lazy='dynamic')

@@ -20,8 +20,8 @@ class Word(db.Model):
     """
 
 
-    __tablename__ = 'USER'
+    __tablename__ = 'Word'
 
     id = db.Column(db.Integer, primary_key = True)
-    user_id = db.relationship('User', backref='word', lazy='dynamic')
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     word_text = db.Column(db.String(255))

@@ -22,7 +22,8 @@ class WordController(object):
     """ Controller, that provide word saving and sending functionality. """
 
     def save_word(self, word):
-        db.session.add(Word(user_id=1, word_text=word))
-        db.session.commit()
+        print db.session.query(Word).filter_by(user_id=1)
+        #db.session.add(Word(user_id=1, word_text=word))
+        #db.session.commit()
 
         return dumps({'a':1})

@@ -25,9 +25,10 @@ class User(db.Model):
 
     __tablename__ = 'User'
 
-    id = db.Column(db.Integer, db.ForeignKey('word.user_id'), primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
     surname = db.Column(db.String(255))
     email = db.Column(db.String(255))
     password = db.Column(db.String(255))
-    role_id = db.relationship('Roles', backref='user', lazy='dynamic')
+    role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
+    words = db.relationship('Word', backref='user', lazy='dynamic')

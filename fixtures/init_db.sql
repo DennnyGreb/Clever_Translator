@@ -45,7 +45,16 @@ CREATE TABLE IF NOT EXISTS `Word` (
 );
 
 -- Add foreign key for User to provide roles
-ALTER TABLE `User` ADD FOREIGN KEY (role_id) REFERENCES `Roles` (id);
+ALTER TABLE `User` ADD CONSTRAINT `fk-user-role` FOREIGN KEY (role_id) REFERENCES `Roles` (id);
 -- Add foreign key for Word to save user's words'
-ALTER TABLE `Word` ADD FOREIGN KEY (user_id) REFERENCES `User` (id);
+ALTER TABLE `Word` ADD CONSTRAINT `fk-word-user` FOREIGN KEY (user_id) REFERENCES `User` (id);
+
+INSERT INTO Roles (name) VALUES ("User");
+INSERT INTO Roles (name) VALUES ("Admin");
+
+INSERT INTO Word (user_id, word_text) VALUES (1, "God");
+
+INSERT INTO User (name, surname, email, password, role_id) 
+VALUES ("Denis", "Grebenets", "dendendengrebenets@gmail.com", "qwerty", 1);
+
 SHOW TABLES;

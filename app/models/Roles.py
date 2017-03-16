@@ -23,4 +23,3 @@ class Roles(db.Model):
 
     id = db.Column(db.Integer, primary_key = True, db.ForeignKey('user.id'))
     name = db.Column(db.String(255))
-

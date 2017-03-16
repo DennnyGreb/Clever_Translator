@@ -14,9 +14,19 @@
 }
 
 .button-wrapper .add-words-btn,
-.button-wrapper .translate-btn
-{
+.button-wrapper .translate-btn {
     width: 300px;
     height: 150px;
     margin: 20px;
+}
+
+.warning-block {
+    font-size: 17px;
+    color: red;
+    min-height: 80px;
+}
+
+.warning-block .success-icon {
+    font-size: 4em;;
+    color: limegreen;
 }

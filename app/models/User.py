@@ -29,5 +29,5 @@ class User(db.Model):
     name = db.Column(db.String(255))
     surname = db.Column(db.String(255))
     email = db.Column(db.String(255))
-    password_hash = db.Column(db.String(255))
+    password = db.Column(db.String(255))
     role_id = db.relationship('Roles', backref='user', lazy='dynamic')

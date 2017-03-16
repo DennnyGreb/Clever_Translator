@@ -34,14 +34,14 @@ $(document).ready(function(){
             "<textarea id='translate-textarea' class='u-full-width' placeholder='What do you want to translate?'></textarea>"
             + "<button id='submit-translate' class='button-primary'>Translate</button>"
         );
-        $("#submin-translate").click(function(){
+        $("#submit-translate").click(function(){
             var translateValue = $("#translate-textarea").val();
             if (translateValue) {
                 $(".warning-block").html("");
-                /*$.post("/", {"word" :wordValue}, function(response){
+                $.post("https://translate.yandex.net/api/v1.5/tr/translate?key=trnsl.1.1.20170316T202440Z.22bfa4c621f0ef70.41db300301a93317a65f0f43d0da8e2b81ab3d73&text="+ translateValue +"&lang=en-ru&format=plain&options=1", function(response){
                     $(".warning-block").html("<span class='material-icons success-icon'>done</span>");
                     console.log(response);
-                });*/
+                });
             }
             else {
                 $(".warning-block").html("");

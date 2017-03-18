@@ -23,7 +23,7 @@ class User(db.Model):
     """
 
 
-    __tablename__ = 'User'
+    __tablename__ = 'user'
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
@@ -31,4 +31,14 @@ class User(db.Model):
     email = db.Column(db.String(255))
     password = db.Column(db.String(255))
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
-    #word = db.relationship('Word', backref=db.backref('user', lazy='joined'), lazy='dynamic')
+    words = db.relationship('Word', backref='user', lazy='dynamic')
+
+    # def __init__(self, name, surname, email, password, role_id):
+    #     self.name = name
+    #     self.surname = surname
+    #     self.email = email
+    #     self.password = password
+    #     self.role_id = role_id
+
+    def __repr__(self):
+        return '<User %r>' % self.name
